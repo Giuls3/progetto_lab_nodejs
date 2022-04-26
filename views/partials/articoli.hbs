@@ -1,16 +1,24 @@
-
-{{#each domusMirabilia}}
+{{#each articoli}}
 
 <!-- Divider-->
 <hr class="my-4" />
 <!-- Post preview-->
 <div class="post-preview">
 
-  <a href="/articoli/{{this.id}}">
     <h2 class="post-title">{{this.titolo}}</h2>
       <p class="post-subtitle">{{this.sottotitolo}}</p>
-  </a>
 
+      <button class="btn btn-primary" type="button"  data-bs-toggle="collapse" data-bs-target="#{{this.idName}}" aria-controls="articolo" aria-expanded="false">
+        Scopri di più
+      </button>
+
+</div>
+
+<div class="collapse" id="{{this.idName}}">
+  <div class="card card-body">
+    <img src="/assets/img/{{this.img}}" alt="">
+    <p>{{this.articolo}}</p>
+  </div>
 </div>
 
 {{/each}}
